@@ -1,0 +1,134 @@
+SOLICITUD DE DESARROLLO DE SOFTWARE PARA RESTAURANTE, BAR Y CAFETERÍA
+De: Luis (Propietario y Director General del Restaurante “Sabor Urbano”) 
+Para: Empresa Desarrolladora de Software 
+Fecha: 28 de agosto de 2026 
+Asunto: Requerimientos para sistema integral de operación local, menú digital, control de mesas y flujo de órdenes
+1. Contexto y Problema Actual
+Tengo un restaurante que ha crecido mucho en los últimos meses. Atendemos un volumen alto de clientes, pero seguimos trabajando con:
+•	Menús impresos que se desgastan.
+•	Meseros saturados tomando pedidos manualmente.
+•	Comandas en papel que se pierden o llegan tarde a cocina.
+•	Tiempos de espera largos porque los clientes no pueden ordenar rápido.
+•	Caídas del sistema cuando falla el Internet del proveedor.
+Mi principal problema es que la operación depende demasiado de la conectividad externa, y cuando el Internet falla, el restaurante se vuelve lento, desorganizado y caótico.
+Por eso quiero un sistema que funcione 100% dentro del restaurante, sin depender de Internet, rápido, estable y que mejore la experiencia tanto del cliente como del personal.
+2. Objetivo del Sistema
+Quiero un sistema que:
+•	Modernice la forma en que los clientes ven el menú y ordenan.
+•	Agilice la comunicación entre mesas, meseros y cocina.
+•	Reduzca tiempos de espera y errores en pedidos.
+•	Permita operar incluso sin Internet externo.
+•	Me dé control total de ventas, mesas, inventario y reportes.
+•	Sea rápido, privado y fácil de usar.
+En pocas palabras: quiero que el restaurante funcione como una máquina bien coordinada, incluso en horas pico.
+3. Requerimientos del Cliente (Yo, como dueño del restaurante)
+3.1 Menú Digital Interactivo para Clientes (desde su celular)
+Quiero que los clientes:
+•	Escaneen un código QR en su mesa.
+•	Vean el menú completo con fotos y descripciones.
+•	Personalicen sus platillos (sin cebolla, extra salsa, término de cocción).
+•	Armen su pedido a su ritmo, sin esperar al mesero.
+•	Puedan ordenar varias personas de la misma mesa al mismo tiempo.
+•	Soliciten atención (servilletas, limpieza, más agua).
+•	Pidan la cuenta desde su celular.
+Todo esto sin necesidad de Internet, solo conectándose a la red local del restaurante.
+3.2 Aplicación para Meseros y Personal de Cocina
+El personal debe tener una aplicación donde:
+•	Vean las órdenes en tiempo real.
+•	Reciban alertas de solicitudes de atención.
+•	Puedan tomar pedidos manuales si el cliente no quiere usar el QR.
+•	Cocina vea comandas claras y organizadas por tiempo.
+•	Barra de bebidas reciba sus órdenes por separado.
+•	Se pueda reimprimir cuentas o comandas cuando sea necesario.
+3.3 Panel Administrativo para Gerentes y Dueños
+Yo necesito un panel donde pueda:
+•	Crear y editar el menú completo.
+•	Administrar mesas y zonas del restaurante.
+•	Ver ventas del día, semana y mes.
+•	Revisar inventario y movimientos.
+•	Gestionar reservaciones.
+•	Crear usuarios y roles (meseros, cocina, gerente).
+•	Configurar impresoras térmicas del restaurante.
+•	Ver reportes detallados de operación.
+3.4 Motor Central Local (sin depender de Internet)
+El sistema debe tener un “motor” interno que:
+•	Procese todas las órdenes.
+•	Sincronice las aplicaciones de clientes, meseros y cocina.
+•	Mantenga la operación funcionando aunque se caiga el Internet externo.
+•	Sea rápido y estable.
+•	Guarde toda la información dentro del restaurante (privacidad total).
+4. Flujo Operativo Deseado
+1. Llegada del Cliente
+El cliente llega y se le asigna una mesa disponible.
+2. Conexión Local
+El cliente se conecta a la red WiFi del restaurante (sin acceso a Internet) y escanea el QR de su mesa.
+3. Exploración del Menú
+El cliente ve el menú digital, categorías, fotos y precios.
+4. Pedidos Simultáneos
+Varias personas de la mesa pueden ordenar al mismo tiempo.
+5. Confirmación del Pedido
+El pedido llega instantáneamente a cocina y barra.
+6. Atención Continua
+El cliente puede pedir:
+•	Servilletas
+•	Limpiar la mesa
+•	Más agua
+•	Llamar al mesero
+7. Solicitud de Cuenta y Pago
+El cliente pide la cuenta desde su celular. El mesero puede dividir la cuenta si es necesario. La mesa se libera para el siguiente grupo.
+5. Ventajas que Necesito Lograr
+Quiero que el sistema me dé:
+•	Cero dependencia de Internet
+•	Velocidad extrema en horas pico
+•	Privacidad total de mis datos
+•	Menor carga operativa para meseros
+•	Mayor rotación de mesas
+•	Menos errores en cocina
+•	Mayor satisfacción del cliente
+6. Módulos que Necesito
+Panel Administrativo (WEB Admin)
+•	Dashboard
+•	Productos
+•	Categorías
+•	Paquetes
+•	Mesas
+•	Órdenes
+•	Inventario
+•	Reservaciones
+•	Reportes
+•	Usuarios
+•	Roles
+•	Configuración del establecimiento
+•	Impresión térmica
+•	Pantallas públicas de cocina y bebidas
+Aplicación para Clientes (PWA Cliente)
+•	Menú
+•	Carrito
+•	Paquetes
+•	Solicitudes de atención
+•	Solicitud de cuenta
+•	Devoluciones
+•	Reservaciones
+•	Cuenta del comensal
+Aplicación para Personal (PWA Staff)
+•	Login
+•	Dashboard de órdenes
+•	Tomar pedido
+•	Gestión de solicitudes
+•	Impresión de cuenta y reimpresión
+7. Requerimientos Adicionales que Considero Importantes
+•	El sistema debe funcionar incluso si el proveedor de Internet falla.
+•	Debe ser rápido en dispositivos económicos.
+•	Debe permitir respaldos locales.
+•	Debe manejar impresoras térmicas sin complicaciones.
+•	Debe ser fácil de usar para clientes y meseros.
+8. Resumen General
+En resumen, necesito un sistema que:
+•	Funcione 100% dentro del restaurante.
+•	Permita a los clientes ver el menú y ordenar desde su celular.
+•	Envíe órdenes instantáneas a cocina y barra.
+•	Reduzca la carga de trabajo de los meseros.
+•	Me dé control total de ventas, inventario y mesas.
+•	Sea rápido, privado y estable.
+
+

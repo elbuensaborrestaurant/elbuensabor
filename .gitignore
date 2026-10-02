@@ -18,6 +18,7 @@ pkg/
 
 # Variables de entorno
 .env
+.env.example
 
 # PostgreSQL
 *.backup

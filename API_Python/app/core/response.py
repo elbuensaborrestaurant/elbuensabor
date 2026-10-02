@@ -16,3 +16,7 @@ def error_response(code: str, message: str, status_code: int = 400) -> JSONRespo
         },
     }
     return JSONResponse(status_code=status_code, content=content)
+
+#Cambio para agregar las mesas, René
+
+#Cambio para agregar las pedidos a domicilio, Diego

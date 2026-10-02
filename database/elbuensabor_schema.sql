@@ -36,7 +36,7 @@
 -- ============================================================
 -- 1. ESQUEMAS
 -- ============================================================
-
+\encoding UTF8
 CREATE SCHEMA IF NOT EXISTS config;
 COMMENT ON SCHEMA config IS 'Configuración global del establecimiento: zonas, impresoras y pantallas KDS.';
 

@@ -8,6 +8,10 @@ Scaffold inicial de la API en Go (Fase 0 del plan de trabajo). Ver el plan compl
 - Go 1.22+
 - PostgreSQL 14+ con el esquema `elbuensabor_schema.sql` cargado
 
+La API incluye inicio y cierre de sesión del personal y consulta del perfil activo
+(`POST /api/v1/auth/login`, `GET /api/v1/auth/me`, `POST /api/v1/auth/logout`).
+Las sesiones se almacenan en PostgreSQL y vencen según `JWT_EXPIRY`.
+
 ## Ejecutar en desarrollo
 
 ```bash

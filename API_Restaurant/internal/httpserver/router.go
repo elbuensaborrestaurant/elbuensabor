@@ -7,12 +7,13 @@ import (
 	"time"
 
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/saborurbano/api_restaurant/internal/auth"
 	"github.com/saborurbano/api_restaurant/internal/configmod"
 	"github.com/saborurbano/api_restaurant/internal/menu"
 )
 
 // NewRouter construye el mux raiz con las rutas base de la API.
-func NewRouter(pool *pgxpool.Pool) http.Handler {
+func NewRouter(pool *pgxpool.Pool, sessionExpiry time.Duration) http.Handler {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
@@ -31,6 +32,9 @@ func NewRouter(pool *pgxpool.Pool) http.Handler {
 	configRepo := configmod.NewRepository(pool)
 	configHandler := configmod.NewHandler(configRepo)
 	configHandler.RegisterRoutes(mux)
+
+	authHandler := auth.NewHandler(pool, sessionExpiry)
+	authHandler.RegisterRoutes(mux)
 
 	menuRepo := menu.NewRepository(pool)
 	menuHandler := menu.NewHandler(menuRepo)

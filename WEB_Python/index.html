@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f5ef">
+    <title>El Buen Sabor | Administración</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <section id="login-screen" class="login-screen">
+      <div class="login-card">
+        <div class="brand-mark">BS</div>
+        <p class="eyebrow">SABOR URBANO · SISTEMA INTERNO</p>
+        <h1>Bienvenido de nuevo</h1>
+        <p class="muted">Inicia sesión para administrar tu restaurante.</p>
+        <form id="login-form">
+          <label for="username">Usuario</label>
+          <input id="username" name="username" autocomplete="username" required>
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <p id="login-message" class="message" role="status"></p>
+          <button class="button primary full" type="submit">Iniciar sesión <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="login-foot">Acceso exclusivo para el personal autorizado</p>
+      </div>
+    </section>
+
+    <div id="app-screen" class="app-screen" hidden>
+      <aside class="sidebar">
+        <a class="brand" href="#" data-page="inicio"><span class="brand-mark small">BS</span><span>Buen Sabor<small>Panel de control</small></span></a>
+        <p class="nav-label">ADMINISTRACIÓN</p>
+        <nav>
+          <button class="nav-link active" data-page="inicio"><span>⌂</span> Resumen</button>
+          <button class="nav-link" data-page="categorias"><span>▦</span> Categorías del menú</button>
+          <button class="nav-link" data-page="establecimiento"><span>◇</span> Establecimiento</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="user-chip"><div class="avatar">BS</div><div><strong id="user-name"></strong><small id="user-role"></small></div></div>
+          <button id="logout-button" class="nav-link logout"><span>↪</span> Cerrar sesión</button>
+        </div>
+      </aside>
+      <main class="main-panel">
+        <header class="topbar"><div><span class="eyebrow">SISTEMA DE GESTIÓN</span><h1 id="page-title">Resumen</h1></div><span class="live-indicator">● <span id="api-status">Conectando</span></span></header>
+        <div id="content" class="content"></div>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <dialog id="category-dialog" class="category-dialog">
+      <form id="category-form">
+        <div class="dialog-heading"><div><p class="eyebrow">CATÁLOGO DEL RESTAURANTE</p><h2 id="dialog-title">Nueva categoría</h2></div><button type="button" class="icon-button" id="close-dialog" aria-label="Cerrar">×</button></div>
+        <input type="hidden" name="id">
+        <label for="category-name">Nombre</label><input id="category-name" name="nombre" maxlength="150" required>
+        <label for="category-description">Descripción</label><textarea id="category-description" name="descripcion" rows="3"></textarea>
+        <div class="form-grid"><div><label for="category-color">Color</label><input id="category-color" name="color_hex" type="color" value="#507a52"></div><div><label for="category-order">Orden</label><input id="category-order" name="orden" type="number" min="0" value="0"></div></div>
+        <label for="category-icon">Icono (opcional)</label><input id="category-icon" name="icono" maxlength="100">
+        <p id="category-message" class="message" role="status"></p>
+        <div class="dialog-actions"><button type="button" class="button secondary" id="cancel-dialog">Cancelar</button><button class="button primary" type="submit">Guardar categoría</button></div>
+      </form>
+    </dialog>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

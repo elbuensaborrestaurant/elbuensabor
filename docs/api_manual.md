@@ -55,13 +55,13 @@ http://<IP-DEL-SERVIDOR>:8080/api/v1
 
 La API utiliza tres mecanismos segun el tipo de cliente:
 
-### 3.1 JWT — Personal del restaurante
+### 3.1 Sesión de personal
 
 ```
 Authorization: Bearer <jwt_token>
 ```
 
-Obtener un JWT:
+Obtener una sesión:
 ```http
 POST /api/v1/auth/login
 Content-Type: application/json
@@ -87,6 +87,10 @@ Respuesta:
   }
 }
 ```
+
+Las sesiones se guardan como un hash SHA-256 en `personal.sesiones_usuario` y
+vencen según `JWT_EXPIRY` (8 horas por defecto). `GET /api/v1/auth/me` consulta
+el perfil usando el token Bearer y `POST /api/v1/auth/logout` invalida la sesión.
 
 ### 3.2 Token KDS — Pantallas de cocina/barra
 

@@ -75,6 +75,9 @@ FastAPI genera automáticamente documentación interactiva accesible desde el na
 | `GET` | `/health` | Health check del servidor y ping a PostgreSQL |
 | `GET` | `/api/v1/version` | Versión de la API |
 | `GET` | `/api/v1/config/establecimiento` | Configuración del restaurante |
+| `POST` | `/api/v1/auth/login` | Iniciar sesión del personal |
+| `GET` | `/api/v1/auth/me` | Consultar usuario de la sesión |
+| `POST` | `/api/v1/auth/logout` | Cerrar sesión |
 | `GET` | `/api/v1/menu/categorias` | Lista categorías activas del menú |
 | `GET` | `/api/v1/menu/categorias/{id}` | Detalle de una categoría por ID |
 | `POST` | `/api/v1/menu/categorias` | Crear una nueva categoría |

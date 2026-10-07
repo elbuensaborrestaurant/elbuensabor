@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17201b">
+    <title>El Buen Sabor · Control de sala</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <section id="login-screen" class="login-screen">
+      <div class="login-decoration"><span>BUEN<br>SABOR</span><i>✦</i></div>
+      <div class="login-card">
+        <p class="eyebrow">RESTAURANTE · CONTROL INTERNO</p>
+        <h1>Tu operación,<br><em>bajo control.</em></h1>
+        <p class="login-copy">Ingresa con tu cuenta de personal para continuar.</p>
+        <form id="login-form">
+          <label for="username">Nombre de usuario</label>
+          <input id="username" autocomplete="username" required>
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" autocomplete="current-password" required>
+          <p id="login-message" class="message" role="status"></p>
+          <button class="button primary full" type="submit">Entrar al panel <span>↗</span></button>
+        </form>
+        <div class="login-note"><span>●</span> Acceso protegido · Sesión del personal</div>
+      </div>
+    </section>
+
+    <div id="app-screen" class="app-screen" hidden>
+      <aside class="sidebar">
+        <a class="brand" href="#" data-page="inicio"><span class="brand-symbol">BS</span><span>EL BUEN SABOR<small>GESTIÓN RESTAURANT</small></span></a>
+        <div class="location-label"><span class="live-dot"></span> SUCURSAL PRINCIPAL</div>
+        <nav>
+          <span class="nav-caption">ESPACIO DE TRABAJO</span>
+          <button class="nav-link active" data-page="inicio"><span class="nav-icon">▤</span> Centro de mando</button>
+          <button class="nav-link" data-page="categorias"><span class="nav-icon">◫</span> Catálogo de menú</button>
+          <button class="nav-link" data-page="establecimiento"><span class="nav-icon">⌖</span> Datos del local</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="profile-row"><div class="avatar">BS</div><div><strong id="user-name"></strong><small id="user-role"></small></div></div>
+          <button id="logout-button" class="signout">↙ <span>Cerrar sesión</span></button>
+        </div>
+      </aside>
+      <main class="main-panel">
+        <header class="topbar"><div><p class="eyebrow">EL BUEN SABOR / <span id="breadcrumb">CENTRO DE MANDO</span></p><h1 id="page-title">Centro de mando</h1></div><div class="api-chip"><span class="live-dot"></span><span id="api-status">Verificando conexión</span></div></header>
+        <div id="content" class="content"></div>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <dialog id="category-dialog" class="category-dialog">
+      <form id="category-form">
+        <div class="dialog-heading"><div><p class="eyebrow">CATÁLOGO / CATEGORÍAS</p><h2 id="dialog-title">Agregar categoría</h2></div><button type="button" class="icon-button" id="close-dialog">×</button></div>
+        <input type="hidden" name="id">
+        <label for="category-name">Nombre de la categoría</label><input id="category-name" name="nombre" maxlength="150" required>
+        <label for="category-description">Descripción</label><textarea id="category-description" name="descripcion" rows="3"></textarea>
+        <div class="form-grid"><div><label for="category-color">Color de marca</label><input id="category-color" name="color_hex" type="color" value="#bc8b45"></div><div><label for="category-order">Posición en el menú</label><input id="category-order" name="orden" type="number" min="0" value="0"></div></div>
+        <label for="category-icon">Icono (opcional)</label><input id="category-icon" name="icono" maxlength="100">
+        <p id="category-message" class="message" role="status"></p>
+        <div class="dialog-actions"><button type="button" class="button secondary" id="cancel-dialog">Cancelar</button><button class="button primary" type="submit">Guardar cambios</button></div>
+      </form>
+    </dialog>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

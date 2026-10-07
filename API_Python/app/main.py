@@ -10,6 +10,7 @@ from app.core.response import success_response, error_response
 from app.platform.db import init_pool, close_pool, ping
 from app.modules.configmod.router import router as config_router
 from app.modules.menu.router import router as menu_router
+from app.modules.auth.router import router as auth_router
 
 # Configuración de logs estructurados
 logging.basicConfig(
@@ -87,6 +88,7 @@ async def get_version():
 # Registro de routers modulares
 app.include_router(config_router)
 app.include_router(menu_router)
+app.include_router(auth_router)
 
 if __name__ == "__main__":
     import uvicorn

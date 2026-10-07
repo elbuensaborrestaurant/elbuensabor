@@ -35,7 +35,7 @@ func main() {
 	}
 	defer pool.Close()
 
-	router := httpserver.NewRouter(pool)
+	router := httpserver.NewRouter(pool, cfg.JWTExpiry)
 
 	srv := &http.Server{
 		Addr:         cfg.ServerHost + ":" + cfg.ServerPort,

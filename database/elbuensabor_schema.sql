@@ -22,8 +22,12 @@
 --   lealtad       → Programa de puntos con tarjetas anónimas
 --
 -- USO:
---   psql -U <usuario> -d <base_de_datos> -f elbuensabor_schema.sql
+--   psql -U <usuario_con_CREATEDB> -d postgres -f elbuensabor_schema.sql
 -- ============================================================
+
+\set ON_ERROR_STOP on
+CREATE DATABASE elbuensabor;
+\connect elbuensabor
 
 
 -- ============================================================
@@ -1040,6 +1044,11 @@ INSERT INTO personal.roles (nombre, tipo, descripcion, permisos) VALUES
     'Gestión de pagos, cierre de cuentas y reportes de ventas.',
     '{"pagos": true, "cuentas": true, "reportes": {"ver": true}, "lealtad": true}'
   );
+
+INSERT INTO personal.usuarios (rol_id, nombre, username, password_hash)
+SELECT id, 'Administrador', 'admin', '$2b$12$jqFtvulG6t0HSTMMLOTp.eIBFbFYs3clLzoMRogzQssWPovHOfule'
+FROM personal.roles
+WHERE nombre = 'Dueño / Director General' AND tipo = 'dueño';
 
 -- Zonas predeterminadas
 INSERT INTO config.zonas (nombre, descripcion, color_hex, icono, orden) VALUES
